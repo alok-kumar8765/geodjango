@@ -12,6 +12,6 @@ urlpatterns = [
     path('addlocation/',addpoint,name='addpoint'),
     path('viewpoints/',viewpoints,name='viewpoints'),
     path('allpoints/',allpoints,name='allpoints'),
-    path('hosptal/',NairobiSubCountiesViewSet,name='hosptal'),
-    path('hospital2/',NairobiHealthFacilitiesViewSet,name='hospital2'),
+    path('hosptal/',NairobiSubCountiesViewSet),
+    path('hospital2/',NairobiHealthFacilitiesViewSet),
 ]
