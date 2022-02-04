@@ -26,10 +26,3 @@ class Points(LeafletGeoAdmin):
 #     list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
 
 @admin.site.register(NairobiSubCounties)
-# class NairobiSubCountiesAdmin(LeafletGeoAdmin):
-#     list_display = ("id", "name", "geom")
-
-    
-# @admin.site.register(PointcloudFormats)
-# class PointcloudFormatsAdmin(LeafletGeoAdmin):
-#     list_display = ("id", "name", "description")
