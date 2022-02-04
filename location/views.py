@@ -1,5 +1,5 @@
 from rest_framework import generics
-from .models import Hotel,Location,HotelTwo
+from .models import Hotel,Location,HotelTwoT
 from rest_framework.generics import GenericAPIView
 from django.contrib.gis.geos import Point
 from geopy.geocoders import Nominatim
