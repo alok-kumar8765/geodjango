@@ -20,7 +20,7 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
-class HotelTwo(models.Model):
+class HotelTwoT(models.Model):
     name = models.CharField(max_length=255)
     street_1 = models.CharField(max_length=200)
     street_2 = models.CharField(max_length=200, null=True, blank=True)
