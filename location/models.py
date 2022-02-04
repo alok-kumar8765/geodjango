@@ -33,8 +33,13 @@ class HotelTwoT(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("Hotel")
-        verbose_name_plural = _("Hotels")
+        verbose_name = _("HotelTwoT")
+        verbose_name_plural = _("HotelTwoTs")
 
     def __str__(self):
         return f"{self.street_1}, {self.city}, {self.state}, {self.country}"
+    
+class points(models.Model):
+    name=models.CharField(max_length=20)
+    location = models.PointField()
+    description=models.CharField(max_length=200,blank=True)
