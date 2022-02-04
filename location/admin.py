@@ -17,12 +17,13 @@ class LocationAdmin(LeafletGeoAdmin):
 class HotelTwoAdmin(LeafletGeoAdmin):
     list_display = ("id", "name",  "city",)
     
-@admin.register(points)
+
 class Points(LeafletGeoAdmin):
     list_display = ("id", "name", "description")
+admin.register(points,Points)
 
-@admin.site.register(NairobiHealthFacilities)
+admin.site.register(NairobiHealthFacilities)
 # class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
 #     list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
 
-@admin.site.register(NairobiSubCounties)
+admin.site.register(NairobiSubCounties)
