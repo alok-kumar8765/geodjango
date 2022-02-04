@@ -1,7 +1,7 @@
 from django.contrib import admin
 from leaflet.admin import LeafletGeoAdmin
 
-from .models import Hotel,Location,HotelTwoT,points
+from .models import *
 
 
 @admin.register(Hotel)
@@ -19,4 +19,20 @@ class HotelTwoAdmin(LeafletGeoAdmin):
     
 @admin.register(points)
 class Points(LeafletGeoAdmin):
+    list_display = ("id", "name", "description")
+
+@admin.register(NairobiHealthFacilities)
+class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
+    list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
+
+@admin.register(NairobiSubCounties)
+class NairobiSubCountiesAdmin(LeafletGeoAdmin):
+    list_display = ("id", "name", "geom")
+
+@admin.register(NairobiHealthFacilities)
+class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
+    list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
+    
+@admin.register(PointcloudFormats)
+class PointcloudFormatsAdmin(LeafletGeoAdmin):
     list_display = ("id", "name", "description")

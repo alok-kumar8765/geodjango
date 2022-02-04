@@ -1,7 +1,10 @@
-from location.models import Hotel, HotelTwoT
+from location.models import *#Hotel, HotelTwoT,Profile,points
 from rest_framework import serializers
+from rest_framework_gis import serializers as geo_serializers
+from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
 
+from .models import  NairobiSubCounties,NairobiHealthFacilities
 class HotelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hotel
@@ -26,3 +29,21 @@ class HotelTwoGetSerializer(serializers.ModelSerializer):
         model = HotelTwoT
 
         fields = ("id","name","zip_code",)
+
+class NairobiSubCountiesSerializer(GeoFeatureModelSerializer):
+    
+	class Meta:
+		model = NairobiSubCounties
+		fields = '__all__'
+		geo_field = 'geom'
+
+
+class NairobiHealthFacilitiesSerializer(GeoFeatureModelSerializer):
+    	
+	distance = serializers.CharField()
+
+	class Meta:
+		model = NairobiHealthFacilities
+		fields = '__all__'
+		geo_field = 'geom'
+		read_only_fields = ['distance']
