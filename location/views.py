@@ -106,12 +106,12 @@ class DetaileHotelApiView(GenericAPIView):
     def get(self,request):
         try:
             query_set = self.get_queryset()
-            serializer = HotelTwoGetSerializer(query_set,many=True)
-    
+            serializer = HotelTwoGetSerializer(query_set,many=True)    
             msg = "your data"
             return Response({"data":serializer.data,"msg":msg})
         except Exception as e:
             return Response({"error":str(e)})
+        
     def post(self,request):
         try:
             serializer = HotelTwoSerializer(data=request.data)
