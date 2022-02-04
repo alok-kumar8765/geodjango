@@ -43,34 +43,3 @@ class points(models.Model):
     name=models.CharField(max_length=20)
     location = models.PointField()
     description=models.CharField(max_length=200,blank=True)
-
-
-class NairobiHealthFacilities(models.Model):
-    geom = models.PointField(blank=True, null=True)
-    addr_city = models.CharField(db_column='addr:city', max_length=255, blank=True, null=True)  # Field renamed to remove unsuitable characters.
-    addr_street = models.CharField(db_column='addr:street', max_length=255, blank=True, null=True)  # Field renamed to remove unsuitable characters.
-    name = models.CharField(max_length=255, blank=True, null=True)
-    contact_phone = models.CharField(db_column='contact:phone', max_length=255, blank=True, null=True)  # Field renamed to remove unsuitable characters.
-
-    class Meta:
-        managed = False
-        db_table = 'nairobi_health_facilities'
-
-
-class NairobiSubCounties(models.Model):
-    geom = models.MultiPolygonField(blank=True, null=True)
-    constituen = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'nairobi_sub_counties'
-
-
-class PointcloudFormats(models.Model):
-    pcid = models.IntegerField(primary_key=True)
-    srid = models.IntegerField(blank=True, null=True)
-    schema = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'pointcloud_formats'

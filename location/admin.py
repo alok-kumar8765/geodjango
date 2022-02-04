@@ -21,9 +21,3 @@ class HotelTwoAdmin(LeafletGeoAdmin):
 class Points(LeafletGeoAdmin):
     list_display = ("id", "name", "description")
 admin.register(points,Points)
-
-admin.site.register(NairobiHealthFacilities)
-# class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
-#     list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
-
-admin.site.register(NairobiSubCounties)
