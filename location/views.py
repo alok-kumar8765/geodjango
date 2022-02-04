@@ -76,8 +76,8 @@ def index(request):
     return render(request, 'index.html', {'locations': locations})
 
 class ListCreateGenericAPIViews(generics.ListCreateAPIView):
-    queryset = Hotel.objects.all()
-    serializer_class = HotelSerializer
+    queryset = HotelTwo.objects.all()
+    serializer_class = HotelTwoSerializer
 
     def perform_create(self, serializer):
         street_1 = serializer.initial_data["street_1"]

@@ -13,7 +13,7 @@ class HotelGetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hotel
 
-        fields = ("id", "name")
+        fields = ("id", "name","address")
 
 class HotelTwoSerializer(serializers.ModelSerializer):
     class Meta:
