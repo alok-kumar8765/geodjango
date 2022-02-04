@@ -13,9 +13,10 @@ class HotelAdmin(LeafletGeoAdmin):
 class LocationAdmin(LeafletGeoAdmin):
     list_display = ("id", "name",  "location")
 
-@admin.site.register(HotelTwoT)
+@admin.register(HotelTwoT)
 class HotelTwoAdmin(LeafletGeoAdmin):
     list_display = ("id", "name",  "city",)
-@admin.site.register(points)
+    
+@admin.register(points)
 class Points(LeafletGeoAdmin):
     list_display = ("id", "name", "description")
