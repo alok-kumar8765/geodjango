@@ -101,16 +101,16 @@ class ListCreateGenericAPIViews(generics.ListCreateAPIView):
         print(pnt)
         serializer.save(location=pnt)
 class DetaileHotelApiView(GenericAPIView):
-    serializer_class = HotelTwoGetSerializer
+    serializer_class = HotelTwoSerializer
     queryset = HotelTwoT.objects.select_related()
-    def get(self,request):
-        try:
-            query_set = self.get_queryset()
-            serializer = HotelTwoGetSerializer(query_set,many=True)    
-            msg = "your data"
-            return Response({"data":serializer.data,"msg":msg})
-        except Exception as e:
-            return Response({"error":str(e)})
+    # def get(self,request):
+    #     try:
+    #         query_set = self.get_queryset()
+    #         serializer = HotelTwoGetSerializer(query_set,many=True)    
+    #         msg = "your data"
+    #         return Response({"data":serializer.data,"msg":msg})
+    #     except Exception as e:
+    #         return Response({"error":str(e)})
         
     def post(self,request):
         try:
