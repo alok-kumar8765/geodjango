@@ -1,4 +1,4 @@
-from location.models import Hotel
+from location.models import Hotel, HotelTwoT
 from rest_framework import serializers
 
 
@@ -17,12 +17,12 @@ class HotelGetSerializer(serializers.ModelSerializer):
 
 class HotelTwoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Hotel
+        model = HotelTwoT
 
         fields = ("id","name","street_1","street_2","city","state","zip_code","country","location")
         extra_kwargs = {"location": {"read_only": True}}
 class HotelTwoGetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Hotel
+        model = HotelTwoT
 
         fields = ("id","name","zip_code",)
