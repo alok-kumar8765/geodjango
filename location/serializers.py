@@ -4,7 +4,6 @@ from rest_framework_gis import serializers as geo_serializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
 
-from .models import  NairobiSubCounties,NairobiHealthFacilities
 class HotelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hotel

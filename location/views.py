@@ -3,7 +3,7 @@ from .models import Hotel,Location,HotelTwoT,points
 from rest_framework.generics import GenericAPIView
 from django.contrib.gis.geos import Point
 from geopy.geocoders import Nominatim
-from .serializers import *#HotelSerializer,HotelTwoSerializer,HotelGetSerializer,HotelTwoGetSerializer
+from .serializers import HotelSerializer,HotelTwoSerializer,HotelGetSerializer,HotelTwoGetSerializer
 from rest_framework.response import Response
 geolocator = Nominatim(user_agent="location")
 from django.contrib.gis.geos import Point
