@@ -21,3 +21,8 @@ class HotelTwoSerializer(serializers.ModelSerializer):
 
         fields = ("id","name","street_1","street_2","city","state","zip_code","country","location")
         extra_kwargs = {"location": {"read_only": True}}
+class HotelTwoGetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hotel
+
+        fields = ("id","name","zip_code",)

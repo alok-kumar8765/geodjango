@@ -3,7 +3,7 @@ from .models import Hotel,Location,HotelTwo
 from rest_framework.generics import GenericAPIView
 from django.contrib.gis.geos import Point
 from geopy.geocoders import Nominatim
-from .serializers import HotelSerializer,HotelTwoSerializer,HotelGetSerializer
+from .serializers import HotelSerializer,HotelTwoSerializer,HotelGetSerializer,HotelTwoGetSerializer
 from rest_framework.response import Response
 geolocator = Nominatim(user_agent="location")
 
@@ -94,12 +94,12 @@ class ListCreateGenericAPIViews(generics.ListCreateAPIView):
         print(pnt)
         serializer.save(location=pnt)
 class DetaileHotelApiView(GenericAPIView):
-    serializer_class = HotelGetSerializer
+    serializer_class = HotelTwoGetSerializer
     queryset = HotelTwo.objects.select_related()
     def get(self,request):
         try:
             query_set = self.get_queryset()
-            serializer = HotelGetSerializer(query_set,many=True)
+            serializer = HotelTwoGetSerializer(query_set,many=True)
     
             msg = "your data"
             return Response({"data":serializer.data,"msg":msg})
