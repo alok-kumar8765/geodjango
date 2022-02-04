@@ -15,7 +15,7 @@ class LocationAdmin(LeafletGeoAdmin):
 
 @admin.site.register(HotelTwoT)
 class HotelTwoAdmin(LeafletGeoAdmin):
-    list_display = ("id", "name", "street_1", "street_2", "city", "state", "zip_code", "country", "location", "created_at", "updated_at")
+    list_display = ("id", "name",  "city",)
 @admin.site.register(points)
 class Points(LeafletGeoAdmin):
     list_display = ("id", "name", "description")
