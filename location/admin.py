@@ -29,9 +29,6 @@ class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
 class NairobiSubCountiesAdmin(LeafletGeoAdmin):
     list_display = ("id", "name", "geom")
 
-@admin.register(NairobiHealthFacilities)
-class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
-    list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
     
 @admin.register(PointcloudFormats)
 class PointcloudFormatsAdmin(LeafletGeoAdmin):
