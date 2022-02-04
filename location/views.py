@@ -76,7 +76,7 @@ def index(request):
     return render(request, 'index.html', {'locations': locations})
 
 class ListCreateGenericAPIViews(generics.ListCreateAPIView):
-    queryset = HotelTwo.objects.all()
+    queryset = HotelTwoT.objects.all()
     serializer_class = HotelTwoSerializer
 
     def perform_create(self, serializer):
@@ -95,7 +95,7 @@ class ListCreateGenericAPIViews(generics.ListCreateAPIView):
         serializer.save(location=pnt)
 class DetaileHotelApiView(GenericAPIView):
     serializer_class = HotelTwoGetSerializer
-    queryset = HotelTwo.objects.select_related()
+    queryset = HotelTwoT.objects.select_related()
     def get(self,request):
         try:
             query_set = self.get_queryset()
