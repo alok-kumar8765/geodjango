@@ -1,7 +1,7 @@
 from re import I
 from django.urls import path
 from .views import *#HotelUpdateRetreiveView, ListCreateGenericViews, addpoint, allpoints,index, viewpoints,HotelCreateAPIView,ListCreateGenericAPIViews,DetaileHotelApiView
-
+from . import views
 urlpatterns = [
     path("hotels/", ListCreateGenericViews.as_view()),
     path("hotels/<str:pk>/",HotelUpdateRetreiveView.as_view()),
@@ -12,6 +12,6 @@ urlpatterns = [
     path('addlocation/',addpoint,name='addpoint'),
     path('viewpoints/',viewpoints,name='viewpoints'),
     path('allpoints/',allpoints,name='allpoints'),
-    path('hosptal/',NairobiSubCountiesViewSet),
-    path('hospital2/',NairobiHealthFacilitiesViewSet),
+    path('hosptal/',views.NairobiSubCountiesViewSet),
+    path('hospital2/',views.NairobiHealthFacilitiesViewSet),
 ]
