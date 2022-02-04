@@ -21,15 +21,15 @@ class HotelTwoAdmin(LeafletGeoAdmin):
 class Points(LeafletGeoAdmin):
     list_display = ("id", "name", "description")
 
-@admin.register(NairobiHealthFacilities)
+@admin.site.register(NairobiHealthFacilities)
 # class NairobiHealthFacilitiesAdmin(LeafletGeoAdmin):
 #     list_display = ("id", "name", "addr_city", "addr_street", "contact_phone")
 
-@admin.register(NairobiSubCounties)
+@admin.site.register(NairobiSubCounties)
 # class NairobiSubCountiesAdmin(LeafletGeoAdmin):
 #     list_display = ("id", "name", "geom")
 
     
-@admin.register(PointcloudFormats)
-# class PointcloudFormatsAdmin(LeafletGeoAdmin):
-#     list_display = ("id", "name", "description")
+@admin.site.register(PointcloudFormats)
+class PointcloudFormatsAdmin(LeafletGeoAdmin):
+    list_display = ("id", "name", "description")
