@@ -30,6 +30,6 @@ class Points(LeafletGeoAdmin):
 #     list_display = ("id", "name", "geom")
 
     
-@admin.site.register(PointcloudFormats)
-class PointcloudFormatsAdmin(LeafletGeoAdmin):
-    list_display = ("id", "name", "description")
+# @admin.site.register(PointcloudFormats)
+# class PointcloudFormatsAdmin(LeafletGeoAdmin):
+#     list_display = ("id", "name", "description")
